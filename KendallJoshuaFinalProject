@@ -1,0 +1,247 @@
+import tkinter as tk
+from tkinter import messagebox
+
+class MyApp:
+    def __init__(self, master):
+        self.master = master
+        master.title("My App")
+
+        # Add the welcome label
+        welcome_label_text = ("Hello, Welcome to Cold n Tasty. We are an Ice Cream shop that looks forward to serving you smiles. Below is a way to see our menu, locations, and hours of operation ahead of your visit.")
+        welcome_label = tk.Label(master, text=welcome_label_text, wraplength=400)
+        welcome_label.pack()
+
+        # Create buttons
+        self.menu_button = tk.Button(master, text="Menu", command=self.show_menu)
+        self.menu_button.pack()
+
+        self.hours_button = tk.Button(master, text="Hours", command=self.show_hours)
+        self.hours_button.pack()
+
+        self.contact_button = tk.Button(master, text="Contact Info", command=self.show_contact_info)
+        self.contact_button.pack()
+
+        self.locations_button = tk.Button(master, text="Locations", command=self.show_locations)
+        self.locations_button.pack()
+
+    def show_menu(self):
+        # Create a new window for displaying menu options
+        menu_window = tk.Toplevel(self.master)
+        menu_window.title("Menu")
+
+        # Display the menu options
+        menu_label = tk.Label(menu_window, text="Menu Options:")
+        menu_label.pack()
+
+        # Buttons for menu options
+        shakes_button = tk.Button(menu_window, text="Shakes", command=self.show_shakes)
+        shakes_button.pack()
+
+        cones_button = tk.Button(menu_window, text="Cones", command=self.show_cones)
+        cones_button.pack()
+
+        scoops_button = tk.Button(menu_window, text="Scoops", command=self.show_scoops)
+        scoops_button.pack()
+
+        cookies_button = tk.Button(menu_window, text="Cookies", command=self.show_cookies)
+        cookies_button.pack()
+
+        # Add a "Back" button in each sub-window
+        menu_button = tk.Button(menu_window, text="Back to Home Page", command=menu_window.destroy)
+        menu_button.pack()
+
+    def show_hours(self):
+        # Create a new window for displaying hours
+        hours_window = tk.Toplevel(self.master)
+        hours_window.title("Hours of Operation")
+
+        # Display the schedule
+        schedule_label = tk.Label(hours_window, text="Schedule:")
+        schedule_label.pack()
+
+        schedule_text = (
+            "Monday-Friday: 11am-10pm\n"
+            "Saturday: 10am-11pm\n"
+            "Sunday: Closed"
+        )
+        schedule_display = tk.Label(hours_window, text=schedule_text)
+        schedule_display.pack()
+
+        # Add a "Menu" button in the hours window
+        menu_button = tk.Button(hours_window, text="Back to Home Page", command=hours_window.destroy)
+        menu_button.pack()
+
+    def show_contact_info(self):
+        # Create a new window for displaying contact information
+        contact_window = tk.Toplevel(self.master)
+        contact_window.title("Contact Information")
+
+        # Display the contact information
+        contact_label = tk.Label(contact_window, text="Contact Info:")
+        contact_label.pack()
+
+        contact_text = (
+            "Phone Number: (555) 625-1024\n"
+            "Email: coldntasty@icecream.com\n"
+            "Instagram: Cold_n_Tasty613"
+        )
+        contact_display = tk.Label(contact_window, text=contact_text)
+        contact_display.pack()
+
+        # Add a "Back" button in the contact window
+        menu_button = tk.Button(contact_window, text="Back to Home Page", command=contact_window.destroy)
+        menu_button.pack()
+
+    def show_locations(self):
+        # Create a new window for displaying locations
+        locations_window = tk.Toplevel(self.master)
+        locations_window.title("Locations")
+
+        # Display the addresses
+        address_label = tk.Label(locations_window, text="Addresses:")
+        address_label.pack()
+
+        addresses_text = (
+            "1. 555 Slippery Ln. Indianapolis, IN\n"
+            "2. 8282 Martin Luther Dr. Indianapolis, IN\n"
+            "3. 613 Allison Ave. Indianapolis, IN"
+        )
+        addresses_display = tk.Label(locations_window, text=addresses_text)
+        addresses_display.pack()
+
+        # Add a "Back" button in the locations window
+        menu_button = tk.Button(locations_window, text="Back to Home Page", command=locations_window.destroy)
+        menu_button.pack()
+
+    def show_shakes(self):
+        # Create a new window for displaying shakes
+        shakes_window = tk.Toplevel(self.master)
+        shakes_window.title("Shakes")
+
+        # Display the shake options
+        shake_label = tk.Label(shakes_window, text="Shake Options:")
+        shake_label.pack()
+
+        shake_price_text = (
+            "Large Shakes: $5.99\n"
+            "Medium Shakes: $4.99"
+        )
+        shake_price_display = tk.Label(shakes_window, text=shake_price_text)
+        shake_price_display.pack()
+
+        shake_flavors_text = (
+            "Flavors:\n"
+            "1. Chocolate\n"
+            "2. Vanilla\n"
+            "3. Banana\n"
+            "4. Strawberry\n"
+            "5. Cookies n Cream"
+        )
+        shake_flavors_display = tk.Label(shakes_window, text=shake_flavors_text)
+        shake_flavors_display.pack()
+
+        # Add a "Back" button in the shakes window
+        menu_button = tk.Button(shakes_window, text="Back to Menu", command=shakes_window.destroy)
+        menu_button.pack()
+
+    def show_cones(self):
+        # Create a new window for displaying cones
+        cones_window = tk.Toplevel(self.master)
+        cones_window.title("Cones")
+
+        # Display the cone options
+        cone_label = tk.Label(cones_window, text="Cone Options:")
+        cone_label.pack()
+
+        cone_price_text = (
+            "Single Scoop: $2.99\n"
+            "Double Scoop: $3.99"
+        )
+        cone_price_display = tk.Label(cones_window, text=cone_price_text)
+        cone_price_display.pack()
+
+        cone_flavors_text = (
+            "Flavors:\n"
+            "1. Chocolate\n"
+            "2. Vanilla Bean\n"
+            "3. Strawberry\n"
+            "4. Cookies n Cream\n"
+            "5. Superman\n"
+            "6. Reese's\n"
+            "7. Cotton Candy"
+        )
+        cone_flavors_display = tk.Label(cones_window, text=cone_flavors_text)
+        cone_flavors_display.pack()
+
+        # Add a "Back" button in the cones window
+        menu_button = tk.Button(cones_window, text="Back to Menu", command=cones_window.destroy)
+        menu_button.pack()
+
+    def show_scoops(self):
+        # Create a new window for displaying scoops
+        scoops_window = tk.Toplevel(self.master)
+        scoops_window.title("Scoops")
+
+        # Display the scoop options
+        scoop_label = tk.Label(scoops_window, text="Scoop Options:")
+        scoop_label.pack()
+
+        scoop_price_text = (
+            "Single Scoop: $1.99\n"
+            "Double Scoop: $2.99"
+        )
+        scoop_price_display = tk.Label(scoops_window, text=scoop_price_text)
+        scoop_price_display.pack()
+
+        scoop_flavors_text = (
+            "Flavors:\n"
+            "1. Chocolate\n"
+            "2. Vanilla Bean\n"
+            "3. Strawberry\n"
+            "4. Cookies n Cream\n"
+            "5. Superman\n"
+            "6. Reese's\n"
+            "7. Cotton Candy"
+        )
+        scoop_flavors_display = tk.Label(scoops_window, text=scoop_flavors_text)
+        scoop_flavors_display.pack()
+
+        # Add a "Back" button in the scoops window
+        menu_button = tk.Button(scoops_window, text="Back to Menu", command=scoops_window.destroy)
+        menu_button.pack()
+
+    def show_cookies(self):
+        # Create a new window for displaying cookies
+        cookies_window = tk.Toplevel(self.master)
+        cookies_window.title("Cookies")
+
+        # Display the cookie options
+        cookie_label = tk.Label(cookies_window, text="Cookie Options:")
+        cookie_label.pack()
+
+        cookie_price_text = (
+            "1 cookie: $0.99\n"
+            "3 cookies: $2.49\n"
+            "6 cookies: $3.99"
+        )
+        cookie_price_display = tk.Label(cookies_window, text=cookie_price_text)
+        cookie_price_display.pack()
+
+        cookie_flavors_text = (
+            "Flavors:\n"
+            "1. Chocolate Chip\n"
+            "2. Oatmeal Raisin\n"
+            "3. Double Chocolate\n"
+            "4. White Macadamia"
+        )
+        cookie_flavors_display = tk.Label(cookies_window, text=cookie_flavors_text)
+        cookie_flavors_display.pack()
+
+        # Add a "Back" button in the cookies window
+        menu_button = tk.Button(cookies_window, text="Back to Menu", command=cookies_window.destroy)
+        menu_button.pack()
+
+if __name__ == "__main__":
+    root = tk.Tk()
+    app = MyApp(root)
+    root.mainloop() 
